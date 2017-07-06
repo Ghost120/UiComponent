@@ -13,21 +13,14 @@ import java.util.List;
  */
 public class DateBox extends TypifiedElement {
 
-    @FindBy(xpath = "//input")
-    private Button input;
-
-    @FindBy(xpath = "//div[contains(@class,'kit-input')]/input")
-    private List<WebElement> inut;
-
-    @FindBy(xpath = "//div[contains(@class,'kit-input')]")
-    WebElement element;
+    @FindBy(xpath = ".//div[contains(@class,'kit-input')]/input")
+    private WebElement input;
 
     public DateBox(WebElement wrappedElement) {
         super(wrappedElement);
     }
 
     public String getDate() {
-        String s = getWrappedElement().findElement(By.xpath("//div[contains(@class,'kit-input')]/input")).getAttribute("value");
         return input.getAttribute("value");
     }
 }

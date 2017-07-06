@@ -14,9 +14,9 @@ import java.util.stream.Collectors;
  */
 public class DropDown extends TypifiedElement {
 
-    private static final String DROP_OPTIONS = ".//div[contains(@class, 'kit-dropdown_options')]";
+    private static final String DROP_OPTIONS = "//div[contains(@class,'kit-dropdown__options')]/div[contains(@class, 'kit-dropdown__option')]";
 
-    @FindBy(xpath = ".//div[@class='kit-dropdown__button']")
+    @FindBy(xpath = ".//div[contains(@class,'kit-dropdown')]")
     private WebElement buttonDropDown;
 
     @FindBy(xpath = ".//div[@class='kit-dropdown__arrow-box']")

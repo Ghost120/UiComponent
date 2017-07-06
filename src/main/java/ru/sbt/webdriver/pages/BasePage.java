@@ -12,6 +12,7 @@ import ru.yandex.qatools.htmlelements.loader.decorator.HtmlElementLocatorFactory
  * savkk@bk.ru
  */
 public class BasePage extends Page {
+
     public BasePage() {
         WebDriver driver = PageFactory.getWebDriver();
         PageFactory.initElements(new CustomHtmlElementDecorator(new HtmlElementLocatorFactory(driver)), this);

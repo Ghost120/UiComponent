@@ -3,6 +3,7 @@ package ru.sbt.webdriver.elements;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 /**
  * Created by Kasyanenko Konstantin
@@ -10,7 +11,8 @@ import org.openqa.selenium.WebElement;
  */
 public class Button extends ru.yandex.qatools.htmlelements.element.Button {
 
-    public static final String BUTTON_TEXT = "//div[@class = 'kit-button__text']";
+    @FindBy(xpath = ".//div[@class = 'kit-button__text']")
+    private WebElement text;
 
     public Button(WebElement wrappedElement) {
         super(wrappedElement);
@@ -18,6 +20,6 @@ public class Button extends ru.yandex.qatools.htmlelements.element.Button {
 
     @Override
     public String getText() {
-        return findElement(By.xpath(BUTTON_TEXT)).getText();
+        return text.getText();
     }
 }
